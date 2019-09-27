@@ -1,0 +1,6 @@
+//Jedis是Redis官方推荐的Java连接开发工具。
+//要在Java开发中使用好Redis中间件，必须对Jedis熟悉才能写成漂亮的代码
+
+
+//ObjectMapper类是Jackson库的主要类。它提供一些功能将转换成Java对象匹配JSON结构，
+//反之亦然。它使用JsonParser和JsonGenerator的实例实现JSON实际的读/写。
