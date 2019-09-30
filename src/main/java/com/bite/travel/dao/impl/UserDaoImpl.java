@@ -31,7 +31,7 @@ public class UserDaoImpl implements UserDao {
             // queryForObject:将当前查询的一条信息封装到所需要的类型中
             // BeanPropertyRowMapper
             //使用JDBCTemplate模板对象查询表,如果没有查询到,出现异常
-           user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username);
+           user = template.queryForObject(sql, new BeanPropertyRowMapper<>(User.class), username);
         }catch (Exception e){
 //            e.printStackTrace();
         }

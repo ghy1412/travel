@@ -10,6 +10,7 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,6 +44,8 @@ public class UserServlet extends BaseServlet {
 
         //加入验证码的操作
         //获取前台页面中的验证码
+/*        Cookie cookie = new Cookie("name", "1231");
+        response.addCookie(cookie);*/
         String check = request.getParameter("check");
         //从session域中获取服务器端存储随机的验证码
         String  checkcode_server = (String) request.getSession().

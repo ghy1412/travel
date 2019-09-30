@@ -32,7 +32,7 @@
 
 
             //向后台发送ajax请求,后台应该数据(PageBean对象)
-            $.get("route/pageQuery",{cid:cid},function (data) {
+            $.get("route/pageQuery",{cid:cid,currentPage:currentPage},function (data) {
                 //data:{totalCount:xxx,totalPage:xxx..}
 
                 //获取总记录数和总页数
@@ -60,7 +60,7 @@
                 var lis = "" ;
 
                 //首页
-                var firtPage = '<li><a href="">首页</a></li>' ;
+                var fristPage = '<li onclick="javascript:load('+cid+')"><a href="javascript:void(0)">首页</a></li>';
                 //上一页
                 var beforePage = '<li class="threeword"><a href="#">上一页</a></li>' ;
 
@@ -72,7 +72,7 @@
                 //遍历服务器响应过来的总页数,将每页的页码获取到
                 for(var i = 1 ; i <=data.totalPage;i++){
                     //让超链接失效
-                    var li ='<li  onclick="javascript:load('+cid+','+currentPage+')"><a href="javascript:void(0)">'+i+'</a></li>' ;
+                    var li ='<li  onclick="javascript:load('+cid+','+i+')"><a href="javascript:void(0)">'+i+'</a></li>' ;
 
                     lis += li ;
                 }
